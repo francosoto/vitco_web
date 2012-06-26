@@ -1,0 +1,33 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    	<head> 
+	<title>Vitco S.A. :: Sistema de control de camiones</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="login/login.css" rel="stylesheet"/>
+        <link href="home/home.css" rel="stylesheet"/>
+        </head> 
+        <body> 
+        <div id="mainPage">
+        </div><!-- /page -->
+
+        </body>
+</html>
+<script type='text/javascript' src='../steal/steal.js'></script>
+<script type='text/javascript'>
+    window.console = {log:function(){}}
+    steal(
+        'can/control/control.js',
+        'bootstrap/docs/assets/css/bootstrap.css',
+        'jquery/jquery.js')
+    .then('vitco_web/login/login.js')
+    .then(
+        function(){
+            new LoginWeb( '#mainPage', {} );
+        }
+    );
+</script>
