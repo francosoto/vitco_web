@@ -38,7 +38,7 @@ steal('can/model')
         }*/
     }, {}),
     can.Model("Totales",{
-        /*findAll : 'GET /transaccions',*/
+        //findAll : 'GET /transaccions',
         getTotal : function(params,success,error){
             return $.ajax({
                 url: '/slim_php/backend_vitco/camionescargados/volumen/total'
