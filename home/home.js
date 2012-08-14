@@ -13,7 +13,7 @@ steal(
     'can/control/control.js',
     'can/view/ejs',
     'vitco_web/config.js',
-    'vitco_web/fixtures/fixtures.js',
+    //'vitco_web/fixtures/fixtures.js',
     'vitco_web/models/transaccion.js',
     'vitco_web/home/home.css')
 .then(
@@ -28,7 +28,7 @@ steal(
                         $('table.transacciones tbody').html(can.view(url+'home/recipe.ejs',resumen))
                     }
                 );
-                Totales.findAll({},
+                /*Totales.findAll({},
                     function(resumen_cuenta) {
                         var c = 0;
                         for(x=0;resumen_cuenta.count_gasoil.length > x; x++){
@@ -36,7 +36,20 @@ steal(
                         }
                         $('div#totales').html(can.view(url+'home/totales.ejs',{count_c: resumen_cuenta.count_camiones.length, vol_d: c}))
                     }
+                )*/
+                    Totales.getTotal({},
+                    function(resumen_cuenta) {
+                        
+                        /*var c = 0;
+                        for(x=0;resumen_cuenta.count_gasoil.length > x; x++){
+                            c += resumen_cuenta.count_gasoil[x];
+                        }*/
+                        $('div#totales').html(can.view(url+'home/totales.ejs',{count_c: cantidad, vol_d: volumen}))
+                    }
                 )
+
+
+
              }
         })
     }
