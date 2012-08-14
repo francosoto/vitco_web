@@ -31,14 +31,20 @@ steal('can/model')
     
 
     can.Model("Transaccion",{
-        findAll : 'GET /transaccions',
-        models  : function(data){
+        //findAll : 'GET /transaccions',
+        findAll : 'GET /slim_php/backend_vitco/camionescargados'
+        /*models  : function(data){
             return data.items;
-        }
+        }*/
     }, {}),
     can.Model("Totales",{
-        findAll : 'GET /transaccions',
-        models  : function(data){
+        /*findAll : 'GET /transaccions',*/
+        getTotal : function(params,success,error){
+            return $.ajax({
+                url: '/slim_php/backend_vitco/camionescargados/volumen/total'
+            })
+        }
+        /*models  : function(data){
             var count_c = new Array(), acum_g = new Array();
             $.each(data.items,function(i,it){
                 if(count_c.indexOf(it.patente_camion) < 0){
@@ -46,8 +52,9 @@ steal('can/model')
                 }
                 acum_g.push(it.vol_despachado)
             })
+            //alert(count_c)
             return {count_camiones: count_c, count_gasoil: acum_g};
-        }
+        }*/
     }
     
     
