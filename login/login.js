@@ -2,7 +2,7 @@ steal(
     'can/control/control.js',
     'can/view/ejs',
     'vitco_web/models/usuario.js',
-    'vitco_web/fixtures/fixtures.js',
+    //'vitco_web/fixtures/fixtures.js',
     'vitco_web/login/login.css',
     'vitco_web/config.js',
     'vitco_web/principal/principal.js').then('./views/init.ejs', function($){    // A este steal le agrego una pantalla ejs o algo asi
@@ -22,7 +22,7 @@ steal(
                  var self = this;
                  evento.preventDefault(); // Seteo informacion por defecto
                  this.element.find('[type=submit]').val('Verificando'); //modifica valor del boton submit
-                 var user = User.findAll({username: el.find('input#username').val(), password: el.find('input#password').val()}); // Consulto al modelo, para validar los parametros de usuario
+                 var user = User.autenticar({usuario: el.find('input#username').val(), password: el.find('input#password').val()}); // Consulto al modelo, para validar los parametros de usuario
                  user.then(function(obj)
                  {
                      if(obj.length > 0)
