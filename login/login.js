@@ -25,6 +25,7 @@ steal(
                  var user = User.autenticar({usuario: el.find('input#username').val(), password: el.find('input#password').val()}); // Consulto al modelo, para validar los parametros de usuario
                  user.then(function(obj)
                  {
+                     window.console.log(obj)
                      if(obj.length > 0)
                      {
                          /*$(document).sigma_session({
