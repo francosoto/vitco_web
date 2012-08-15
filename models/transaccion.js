@@ -39,11 +39,18 @@ steal('can/model')
     }, {}),
     can.Model("Totales",{
         //findAll : 'GET /transaccions',
-        getTotal : function(params,success,error){
+        getTotal: function() {
+            return $.get('/slim_php/backend_vitco/camionescargados/volumen/total')
+        },
+        findAll : 'GET /slim_php/backend_vitco/camionescargados/volumen/total'
+        /*getTotal : function(params,success,error){
             return $.ajax({
                 url: '/slim_php/backend_vitco/camionescargados/volumen/total'
             })
-        }
+        }*/
+       /* ,models: function(data) {
+            return data[0]
+        }*/
         /*models  : function(data){
             var count_c = new Array(), acum_g = new Array();
             $.each(data.items,function(i,it){

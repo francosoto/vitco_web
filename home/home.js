@@ -37,17 +37,22 @@ steal(
                         $('div#totales').html(can.view(url+'home/totales.ejs',{count_c: resumen_cuenta.count_camiones.length, vol_d: c}))
                     }
                 )*/
-                    Totales.getTotal({},
+                    
+                   Totales.getTotal({}).then(
+                   
                     function(resumen_cuenta) {
+                        //console.log(resumen_cuenta)
                         
+                        /*window.console = {log:function(msg){
+                            alert(msg)
+                        }}*/
                         /*var c = 0;
                         for(x=0;resumen_cuenta.count_gasoil.length > x; x++){
                             c += resumen_cuenta.count_gasoil[x];
                         }*/
-                        $('div#totales').html(can.view(url+'home/totales.ejs',{count_c: cantidad, vol_d: volumen}))
+                        $('div#totales').html(can.view(url+'home/totales.ejs',{count_c: resumen_cuenta[0].cantidad, vol_d: resumen_cuenta[0].volumen}))
                     }
                 )
-
 
 
              }
