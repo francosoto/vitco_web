@@ -10,14 +10,14 @@
             <ul class="dropdown-menu">
               <li><a href="#" class="salir">Salir</a></li>
             </ul>
-            </div>
-            <div class="nav-collapse">
+         </div>
+         <div class="nav-collapse">
             <ul class="nav">
-              <% for(x = 0; data.length > x; x++) {
-                    <li><a href="#<%= data[x].control%>"><!--<img src="<%=base_url + data[x].img%>">--> <%= data[x].nombre %><!--</a>--></li>
+              <% for(x = 0; data.length > x; x++) { %>
+                    <li><a href="#<%= data[x].control%>"><img src="<%=base_url + data[x].icono%>"> <%= data[x].nombre %></a></li>
               <% } %>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>

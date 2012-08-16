@@ -14,7 +14,7 @@ steal(
     'can/view/ejs',
     'vitco_web/config.js',
     //'vitco_web/fixtures/fixtures.js',
-    'vitco_web/models/transaccion.js',
+    'vitco_web/models/camionescargados.js',
     'vitco_web/home/home.css')
 .then(
     function(){
@@ -23,7 +23,7 @@ steal(
             'init': function( element , options ) {
                 this.element.html(can.view(url+'home/main.ejs'))
                 this.element.html(can.view(url+'home/tabla_transaccion.ejs'))
-		Transaccion.findAll({},
+		Camionescargados.findAll({},
                     function(resumen) {
                         $('table.transacciones tbody').html(can.view(url+'home/recipe.ejs',resumen))
                     }

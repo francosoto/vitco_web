@@ -8,6 +8,7 @@ steal(
     'can/control/control.js',
     'can/view/ejs',
     'vitco_web/config.js',
+    'vitco_web/models/menu.js',
     'bootstrap/js/bootstrap-dropdown.js')
 .then(
     function(){
@@ -19,8 +20,15 @@ steal(
         },{
             'init': function( element , options ) {
                 var self = this
-                self.element.html(can.view(url+'topbar/topbar.ejs', {base_url: url+'images/',username: self.options.user.username}))
-                $('.dropdown-toggle').dropdown()
+                $.when(Menu.findAll({id: options.user.id_perfil})).then(
+                    function(resumen) {
+                        self.element.html(can.view(url+'topbar/topbar.ejs', {base_url: url+'images/',username: self.options.user.usuario, data: resumen}))
+                        $('.dropdown-toggle').dropdown()
+                    }
+                );/*.error(
+                    function(error){
+                        console.log(error)
+                    })*/
             },
             'a.brand click': function(element, options){
                     new Home("#content")

@@ -1,0 +1,16 @@
+
+<% for (var i=0; i < ca.length; i++) { %>
+<tr>
+        <td align="center"><%= ca[i].nomination_id %></td>
+        <td align="center"><%= ca[i].last_name %></td>
+        <td align="center"><%= ca[i].first_name %></td>
+        <td align="center"><%= ca[i].truck_license_plate %></td>
+	<td align="center"><%= ca[i].trailer_license_plate %></td>
+        <td align="center"><%= ca[i].client %></td>
+	<td align="center"><%= ca[i].delivery_note_company %></td>
+	<td align="center"><%= ca[i].transport_company %></td>
+        <td align="center"><%= ca[i].parking_entry_time %></td>
+        <td align="center"><%= ca[i].terminal_entry_time %></td>
+	<td align="center"><%= ca[i].notes %></td>
+</tr>
+<% }  %>
