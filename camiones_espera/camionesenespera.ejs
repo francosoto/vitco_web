@@ -1,0 +1,16 @@
+
+<% for (var i=0; i < this.length; i++) { %>
+<tr>
+        <td align="center"><%= this[i].nomination_id %></td>
+        <td align="center"><%= this[i].last_name %></td>
+        <td align="center"><%= this[i].first_name %></td>
+        <td align="center"><%= this[i].truck_license_plate %></td>
+	<td align="center"><%= this[i].trailer_license_plate %></td>
+        <td align="center"><%= this[i].client %></td>
+	<td align="center"><%= this[i].delivery_note_company %></td>
+	<td align="center"><%= this[i].transport_company %></td>
+        <td align="center"><%= this[i].parking_entry_time %></td>
+        <td align="center"><%= this[i].terminal_entry_time %></td>
+	<td align="center"><%= this[i].notes %></td>
+</tr>
+<% }  %>

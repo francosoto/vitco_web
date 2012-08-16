@@ -1,0 +1,30 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    	<head> 
+	<title>Vitco S.A. :: Sistema de control de camiones</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        </head> 
+        <body> 
+        <div id="mainPage">
+        </div><!-- /page -->
+
+        </body>
+</html>
+<script type='text/javascript' src='../../steal/steal.js'></script>
+<script type='text/javascript'>
+    steal(
+        'can/control/control.js',
+        'bootstrap/docs/assets/css/bootstrap.css',
+        'jquery/jquery.js')
+    .then('vitco_web/camiones_espera/camiones_espera.js')
+    .then(
+        function(){
+            new Camiones_espera( '#mainPage', {} );
+        }
+    );
+</script>
