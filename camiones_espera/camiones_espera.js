@@ -14,6 +14,8 @@ steal(
     'can/view/ejs',
     'vitco_web/config.js',
     //'vitco_web/fixtures/fixtures.js',
+    'sigma/filtro',
+    'sigma/autocomplete',
     'vitco_web/models/camionesenespera.js',
     'vitco_web/home/home.css')
 .then(
@@ -22,12 +24,52 @@ steal(
         can.Control("Camiones_espera",{
             'init': function( element , options ) {
                 this.element.html(can.view(url+'camiones_espera/tabla_camionesenespera.ejs'))
+                new Filtro('div#filtro div#mifiltro',{
+                    filterType: 'inline',
+                    filterData: [
+                        {
+                            label: 'Client',
+                            value: 'client',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Last Name',
+                            value: 'last_name',
+                            type: 'input'
+                            //,selectOptions: [{value: 1, text: 'Ingles'},{value: 2, text: 'Frances'}]
+                        },
+                        {
+                            label: 'Nomination ID',
+                            value: 'nomination_id',
+                            type: 'input'
+                        }
+                    ],
+                    filterFunction: function(path) {
+                        console.log(path)
+                        Camionesenespera.findCamionesFiltrados(path).then(function(result){
+                            console.log(result)
+                            $('table.transacciones tbody').html(can.view(url+'camiones_espera/camionesenespera.ejs',result))
+                        })
+                    }
+
+                })
+                /*new Autocomplete('input[filter-field="nomination_id"]',{
+                    model: Camionesenespera
+                })*/
 		Camionesenespera.findAll({},
                     function(resumen) {
-                        //console.log(resumen)
+                        console.log(resumen)
                         $('table.transacciones tbody').html(can.view(url+'camiones_espera/camionesenespera.ejs',resumen))
                     }
                 );
+
+                    
+
+
+                            
+
+                    
+
                 /*Totales.findAll({},
                     function(resumen_cuenta) {
                         var c = 0;

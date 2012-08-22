@@ -11,7 +11,8 @@ steal(
     'vitco_web/models/menu.js',
     'bootstrap/js/bootstrap-dropdown.js',
     'vitco_web/camiones_cargados/camiones_cargados.js',
-    'vitco_web/camiones_espera/camiones_espera.js')
+    'vitco_web/camiones_espera/camiones_espera.js',
+    'vitco_web/usuarios/handler/usuarios.js')
 .then(
     function(){
         
@@ -39,6 +40,7 @@ steal(
                 switch(click){
                     case '#menu-camionescargados': new Camiones_cargados("#content",{ user: this.options.user}); break;
                     case '#menu-camionesenespera': new Camiones_espera("#content",{ user: this.options.user}); break;
+                    case '#menu-usuarios': new UsuariosWeb("#content",{ user: this.options.user}); break;
                     //case '#menu-recuperacion-clave': new RecuperacionClave("#content",{ user: this.options.user}); break;
                 }
             },

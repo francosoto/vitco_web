@@ -24,6 +24,7 @@ steal(
                 this.element.html(can.view(url+'camiones_cargados/tabla_camiones_cargados.ejs'))
 		Camionescargados.findAll({},
                     function(resumen) {
+                        //console.log(resumen)
                         $('table.transacciones tbody').html(can.view(url+'camiones_cargados/recipe.ejs',resumen))
                     }
                 );
