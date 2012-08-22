@@ -22,8 +22,9 @@ steal(
         can.Control("Camiones_espera",{
             'init': function( element , options ) {
                 this.element.html(can.view(url+'camiones_espera/tabla_camionesenespera.ejs'))
-		CamionesenEspera.findAll({},
+		Camionesenespera.findAll({},
                     function(resumen) {
+                        //console.log(resumen)
                         $('table.transacciones tbody').html(can.view(url+'camiones_espera/camionesenespera.ejs',resumen))
                     }
                 );
