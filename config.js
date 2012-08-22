@@ -4,6 +4,6 @@
  */
 
 
-var url = '/vitco/vitco_web/';
+var url = '/vitco_web/vitco_web/';
 
 var url_img = '/vitco_web/';

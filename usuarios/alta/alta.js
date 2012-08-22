@@ -4,8 +4,7 @@ steal(
     //'vitco_web/fixtures/fixtures.js',
     'vitco_web/models/usuario.js',
     'vitco_web/usuarios/handler/usuarios.css',
-    'vitco_web/config.js',
-    'bootstrap/js/bootstrap-tab.js')
+    'vitco_web/config.js')
 .then(
     function(){
         

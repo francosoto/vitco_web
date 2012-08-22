@@ -3,7 +3,6 @@ steal(
     'can/view/ejs',
     'vitco_web/usuarios/handler/usuarios.css',
     'vitco_web/config.js',
-    'bootstrap/js/bootstrap-tab.js',
     'sigma/tabla',
     //'vitco_web/fixtures/fixtures.js',
     'vitco_web/usuarios/alta/alta.js',
