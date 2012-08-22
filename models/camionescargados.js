@@ -61,9 +61,7 @@ steal('can/model')
             //alert(count_c)
             return {count_camiones: count_c, count_gasoil: acum_g};
         }*/
-    }
-    
-    
+    }   
     , {})
     
 })

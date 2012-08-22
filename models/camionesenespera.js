@@ -1,7 +1,6 @@
 steal('can/model')
 .then(function(){
 
-
     can.Model("Camionesenespera",{
         //findAll : 'GET /transaccions',
         findAll : 'GET /slim_php/backend_vitco/camionesenespera'

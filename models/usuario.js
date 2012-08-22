@@ -40,12 +40,21 @@ steal('can/model')
                 type: 'POST',
                 data: JSON.stringify(params)
             })
+        },
+        getTabla: function(params, success, error){
+            return $.ajax({
+                url: '/slim_php/backend_vitco/usuarios/tabla',
+                type: 'POST',
+                data: JSON.stringify(params)
+            })
         }
-        /*,
-        models  : function(data){
+        /*,models  : function(data){
             console.log(data)
-            return data;
-        } */
+            return {
+                items: data,
+                count: data.length
+            }
+        }*/
     }, {})
     
 
