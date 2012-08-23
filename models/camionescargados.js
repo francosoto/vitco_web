@@ -32,7 +32,14 @@ steal('can/model')
 
     can.Model("Camionescargados",{
         //findAll : 'GET /transaccions',
-        findAll : 'GET /slim_php/backend_vitco/camionescargados'
+        findAll : 'GET /slim_php/backend_vitco/camionescargados',
+        findCamionesFiltrados: function(params,success,error){
+            return $.ajax({
+                url: '/slim_php/backend_vitco/camionescargados/filter',
+                type: 'POST',
+                data: JSON.stringify(params)
+            })
+        }
         /*models  : function(data){
             return data.items;
         }*/

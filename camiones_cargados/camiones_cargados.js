@@ -14,14 +14,62 @@ steal(
     'can/view/ejs',
     'vitco_web/config.js',
     //'vitco_web/fixtures/fixtures.js',
+    'sigma/filtro',
+    'jquery-ui/themes/base/jquery.ui.core.css',
+    'jquery-ui/themes/base/jquery.ui.theme.css',
+    'jquery-ui/themes/base/jquery.ui.datepicker.css',
+    'jquery-ui/jquery-1.8.0.js',
     'vitco_web/models/camionescargados.js',
     'vitco_web/home/home.css')
-.then(
+    .then(
+    'jquery-ui/ui/jquery.ui.core.js',
+    'jquery-ui/ui/jquery.ui.widget.js',
+    'jquery-ui/ui/jquery.ui.datepicker.js')
+.then('jquery-ui/ui/jquery.ui.datepicker-es.js',
     function(){
         
         can.Control("Camiones_cargados",{
             'init': function( element , options ) {
                 this.element.html(can.view(url+'camiones_cargados/tabla_camiones_cargados.ejs'))
+
+                new Filtro('div#filtro div#mifiltro',{
+                    filterType: 'inline',
+                    filterData: [
+                        {
+                            label: 'Cliente',
+                            value: 'cliente',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Remito',
+                            value: 'remito',
+                            type: 'input'
+                            //,selectOptions: [{value: 1, text: 'Ingles'},{value: 2, text: 'Frances'}]
+                        },
+                        {
+                            label: 'Nominacion',
+                            value: 'nominacion',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Fecha',
+                            value: 'fecha',
+                            type: 'input'
+                        }
+                    ],
+                    filterFunction: function(path) {
+                        console.log(path)
+                        Camionescargados.findCamionesFiltrados(path).then(function(result){
+                            console.log(result)
+                            $('table.transacciones tbody').html(can.view(url+'camiones_cargados/camionescargados.ejs',result))
+                        })
+                    }
+
+                })
+
+
+                $('input[filter-field="fecha"]').datepicker($.datepicker.regional['es']);
+
 		Camionescargados.findAll({},
                     function(resumen) {
                         //console.log(resumen)

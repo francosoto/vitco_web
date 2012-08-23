@@ -63,13 +63,6 @@ steal(
                     }
                 );
 
-                    
-
-
-                            
-
-                    
-
                 /*Totales.findAll({},
                     function(resumen_cuenta) {
                         var c = 0;
