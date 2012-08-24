@@ -28,8 +28,8 @@ steal(
                     filterType: 'inline',
                     filterData: [
                         {
-                            label: 'Client',
-                            value: 'client',
+                            label: 'Nomination ID',
+                            value: 'nomination_id',
                             type: 'input'
                         },
                         {
@@ -39,8 +39,43 @@ steal(
                             //,selectOptions: [{value: 1, text: 'Ingles'},{value: 2, text: 'Frances'}]
                         },
                         {
-                            label: 'Nomination ID',
-                            value: 'nomination_id',
+                            label: 'First Name',
+                            value: 'first_name',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Truck License Plate',
+                            value: 'truck_license_plate',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Trailer License Plate',
+                            value: 'trailer_license_plate',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Client',
+                            value: 'client',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Transport Company',
+                            value: 'transport_company',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Parking Entry Time',
+                            value: 'parking_entry_time',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Terminal Entry Time',
+                            value: 'terminal_entry_time',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Notes',
+                            value: 'notes',
                             type: 'input'
                         }
                     ],

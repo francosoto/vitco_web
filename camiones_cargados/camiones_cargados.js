@@ -36,8 +36,8 @@ steal(
                     filterType: 'inline',
                     filterData: [
                         {
-                            label: 'Cliente',
-                            value: 'cliente',
+                            label: 'Fecha',
+                            value: 'fecha',
                             type: 'input'
                         },
                         {
@@ -47,15 +47,45 @@ steal(
                             //,selectOptions: [{value: 1, text: 'Ingles'},{value: 2, text: 'Frances'}]
                         },
                         {
-                            label: 'Nominacion',
-                            value: 'nominacion',
+                            label: 'Número Tránsito',
+                            value: 'nro_transito',
                             type: 'input'
                         },
                         {
-                            label: 'Fecha',
-                            value: 'fecha',
+                            label: 'Cliente',
+                            value: 'cliente',
                             type: 'input'
-                        }
+                        },                        
+                        {
+                            label: 'Volumen despachado',
+                            value: 'vol_despachado',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Chofer',
+                            value: 'chofer',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Patente Camión',
+                            value: 'patente_camion',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Patente acoplado',
+                            value: 'patente_acoplado',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Transportista',
+                            value: 'transportista',
+                            type: 'input'
+                        },
+                        {
+                            label: 'Domicilio Entrega',
+                            value: 'dom_entrega',
+                            type: 'input'
+                        },  
                     ],
                     filterFunction: function(path) {
                         console.log(path)
@@ -73,7 +103,7 @@ steal(
 		Camionescargados.findAll({},
                     function(resumen) {
                         //console.log(resumen)
-                        $('table.transacciones tbody').html(can.view(url+'camiones_cargados/recipe.ejs',resumen))
+                        $('table.transacciones tbody').html(can.view(url+'camiones_cargados/camionescargados.ejs',resumen))
                     }
                 );
                 /*Totales.findAll({},
