@@ -20,7 +20,7 @@ steal(
                 this.tabla = new Tabla("#tabla_usuarios",{
                     head: url + 'usuarios/tabla/head.ejs',
                     model: User,
-                    row: url + 'usuarios/tabla/recipe.ejs',
+                    row: url + 'usuarios/tabla/tabla.ejs',
                     tableStyle: 'simple striped bordered',
                     paginate: {
                         perPage: 5,

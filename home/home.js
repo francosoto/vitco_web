@@ -25,7 +25,7 @@ steal(
                 /*this.element.html(can.view(url+'home/tabla_transaccion.ejs'))
 		Camionescargados.findAll({},
                     function(resumen) {
-                        $('table.transacciones tbody').html(can.view(url+'home/recipe.ejs',resumen))
+                        $('table.transacciones tbody').html(can.view(url+'home/camionescargados.ejs',resumen))
                     }
                 );
                     
