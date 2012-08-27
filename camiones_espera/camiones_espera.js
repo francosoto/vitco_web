@@ -80,9 +80,9 @@ steal(
                         }
                     ],
                     filterFunction: function(path) {
-                        console.log(path)
+                        //console.log(path)
                         Camionesenespera.findCamionesFiltrados(path).then(function(result){
-                            console.log(result)
+                            //console.log(result)
                             $('table.transacciones tbody').html(can.view(url+'camiones_espera/camionesenespera.ejs',result))
                         })
                     }
@@ -93,7 +93,7 @@ steal(
                 })*/
 		Camionesenespera.findAll({},
                     function(resumen) {
-                        console.log(resumen)
+                        //console.log(resumen)
                         $('table.transacciones tbody').html(can.view(url+'camiones_espera/camionesenespera.ejs',resumen))
                     }
                 );

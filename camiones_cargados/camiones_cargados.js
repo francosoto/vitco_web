@@ -88,9 +88,9 @@ steal(
                         },  
                     ],
                     filterFunction: function(path) {
-                        console.log(path)
+                        //console.log(path)
                         Camionescargados.findCamionesFiltrados(path).then(function(result){
-                            console.log(result)
+                            //console.log(result)
                             $('table.transacciones tbody').html(can.view(url+'camiones_cargados/camionescargados.ejs',result))
                         })
                     }
